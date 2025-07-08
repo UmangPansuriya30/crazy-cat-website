@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Circle with Background and Image</title>
+    <style>
+        .circle-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 100px auto;
+            /* center on page */
+        }
+
+        .circle {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .circle-container::before,
+        .circle-container::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 0, 0, 0.2);
+            /* light red */
+            z-index: 0;
+        }
+
+        .circle-container::before {
+            width: 150px;
+            height: 150px;
+            top: -25px;
+            left: -25px;
+        }
+
+        .circle-container::after {
+            width: 180px;
+            height: 180px;
+            top: -40px;
+            left: -40px;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="circle-container">
+        <div class="circle">
+            <img src="asssets/man.svg" alt="Profile Image">
+        </div>
+    </div>
+
+</body>
+
+</html>

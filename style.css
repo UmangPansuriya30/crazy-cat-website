@@ -1,0 +1,586 @@
+:root {
+    --clr-primary: rgba(255, 168, 0, 1);
+    --clr-secondary: rgba(232, 144, 88, 1);
+
+    --clr-bg-100: rgba(255, 209, 179, 1);
+    --clr-bg-200: rgba(255, 235, 195, 1);
+    --clr-bg: rgba(255, 251, 243, 1);
+    --clr-footer: rgba(254, 236, 202, 1);
+
+
+    --clr-nuetral: rgba(255, 255, 255, 1);
+    --clr-dark: rgba(0, 0, 0, 1);
+
+    --clr-body: var(--clr-bg);
+
+    --ff-primary: "Inter", sans-serif;
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --fs-200: 1rem;
+    /*16*/
+    --fs-300: 1.25rem;
+    /*20*/
+    --fs-400: 1.375rem;
+    /*22*/
+    --fs-500: 1.5rem;
+    /*24*/
+    --fs-600: 1.875rem;
+    /*30*/
+    --fs-700: 2.25rem;
+    /*36*/
+    --fs-800: 4rem;
+    /*64*/
+    --fs-900: 5.75rem;
+    /*92*/
+
+    --fs-body: var(--fs-500);
+    --fs-button: var(--fs-700);
+    --fs-nav: var(--fs-500);
+    --fs-secondary-heading: var(--fs-800);
+    --fs-primary-heading: var(--fs-900);
+
+
+    --size-100: 1rem;
+    --size-200: 1.5rem;
+    --size-300: 2rem;
+    --size-400: 3rem;
+    --size-500: 4rem;
+    --size-600: 5rem;
+    --size-700: 7rem;
+    --size-800: 9rem;
+    --size-900: 11rem;
+    --size-1000: 15rem;
+
+}
+
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* default margin */
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* general styling */
+body {
+    font-size: var(--fs-body);
+    font-family: var(--ff-primary);
+    color: var(--clr-dark);
+    background: var(--clr-body);
+}
+
+p:not([class]) {
+    max-width: 38ch;
+}
+
+/* navigation  */
+
+.primary-header {
+    padding-block: var(--size-600);
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-list {
+    display: flex;
+    gap: clamp(var(--size-100), 5vw, var(--size-400));
+    align-items: center;
+    font-size: var(--fs-nav);
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: var(--clr-dark);
+}
+
+.primary-nav-logo-home .nav-list {
+    align-items: flex-end;
+}
+
+.primary-nav-logo-home .nav-list a {
+    font-weight: var(--fw-regular);
+}
+
+.primary-navigation .nav-list a {
+    font-weight: var(--fw-bold);
+}
+
+.primary-navigation .nav-list a:hover,
+.primary-navigation .nav-list a:focus {
+    color: var(--clr-primary);
+}
+
+.logo-home-seprator {
+    border: 1px solid #C9C9C9;
+
+}
+
+/* hero section */
+
+.hero-image {
+    position: relative;
+    width: 45.32875rem;
+    height: 45.32875rem;
+    background-color: var(--clr-bg-200);
+    border-radius: 50%;
+}
+
+
+.hero-image::before,
+.hero-image::after {
+    position: absolute;
+    z-index: -1;
+}
+
+.hero-image::before {
+    content: url("assets/cat.svg");
+    bottom: 0%;
+    right: -10%;
+    z-index: 1;
+}
+
+.hero-image::after {
+    content: "";
+    border-radius: 50%;
+    background-color: var(--clr-nuetral);
+    width: 180%;
+    height: 180%;
+    top: -40%;
+    left: -40%;
+}
+
+.letters-rotate-style {
+    display: flex;
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+/*Section-2*/
+
+
+.section__2-heading {
+    text-align: center;
+    width: 23ch;
+    letter-spacing: -3px;
+    margin-bottom: 4%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    background-image: url("assets/cat-footprint.svg");
+    background-repeat: repeat-x;
+    background-position-y: 10rem;
+    background-clip: border-box;
+
+}
+
+.human-image {
+    position: relative;
+}
+
+.human-image::after,
+.human-image::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+}
+
+.human-image::after {
+    border-radius: 50%;
+    background-color: var(--clr-nuetral);
+    width: 61.17rem;
+    height: 61.17rem;
+    left: -135px;
+    bottom: 16px;
+    z-index: -5;
+}
+
+.human-image::before {
+    content: "";
+    border-radius: 50%;
+    background-color: var(--clr-bg-200);
+    width: 36.625rem;
+    height: 36.625rem;
+    bottom: 10.5rem;
+    left: 65px;
+    z-index: -1;
+}
+
+.section__2-container {
+    --max-width: 1800px;
+    --container-padding: 1rem;
+
+    width: min(var(--max-width), 100% - (var(--container-padding)*2));
+    margin-inline: auto;
+}
+
+.testimonial-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    list-style: none;
+    padding: 2rem;
+}
+
+.testimonial {
+    padding: 1.5rem;
+}
+
+blockquote {
+    margin: 0 0 2rem;
+    position: relative;
+}
+
+blockquote::before {
+    content: "“";
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(var(--fs-900) + 5rem);
+    position: absolute;
+    left: -55px;
+    top: -0.33em;
+    color: #e6dcd3;
+    line-height: 1;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Section-3 */
+
+.fact-container {
+    position: relative;
+}
+
+.fact-cat-image {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -13.8rem;
+
+}
+
+.fact-wrapper {
+    background-color: var(--clr-secondary);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7rem 15rem;
+    padding: 23.5rem 8rem 10rem;
+}
+
+.fact-title {
+    width: max-content;
+    background-color: var(--clr-bg-100);
+    padding: 0.2rem 0.56rem;
+    border-radius: 5px;
+    font-size: var(--fs-300);
+    font-weight: var(--fw-bold);
+    transform: rotate(-5.13deg);
+    margin-bottom: var(--size-100)
+}
+
+.fact-content {
+    font-size: var(--fs-600);
+    line-height: 1.5;
+}
+
+/*section-4*/
+.last-section {
+    height: 800px;
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    row-gap: 0px;
+
+}
+
+.temp p {
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.cta-section {
+    height: 800px;
+    padding: var(--size-1000) var(--size-300);
+}
+.cta-inner {
+    display: grid;
+    justify-self: center;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--size-300) var(--size-900);
+}
+.cta-logo {
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+.cta-inner .button{
+    align-self: center;
+}
+
+.cta-text {
+    align-self:center;
+    font-size: var(--fs-800);
+    font-weight: var(--fw-bold);
+    line-height: 1.2;
+    text-align: right;
+    max-width: 13ch;
+}
+
+/* Footer */
+.primary-footer {
+    padding-block: var(--size-400);
+    background-color: var(--clr-footer);
+}
+
+/* button */
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    border: 0;
+    width: 296px;
+    height: 99px;
+    border-radius: 5px;
+    padding: 0.875rem 1.6875rem;
+    line-height: 1;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-button);
+    color: var(--clr-dark);
+    background: var(--clr-primary);
+}
+
+.button:hover,
+.button:focus {
+    border: 3px solid var(--clr-dark);
+}
+
+@media (max-width:50em) {
+    .button {
+        width: 270px;
+        height: 73px;
+        padding: 0.875rem 1.6875rem;
+    }
+}
+
+/*utility class*/
+.container {
+    --max-width: var(--max-wide,1674px);
+    --container-padding: 1rem;
+
+    width: min(var(--max-width), 100% - (var(--container-padding)*2));
+    margin-inline: auto;
+}
+
+.even-columns {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width:47em) {
+    .even-columns {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+}
+
+.vertical-align-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-self: center;
+}
+
+.flow>*:not(:first-child) {
+    margin-top: var(--flow-spacer, 3em);
+}
+
+.fw-regular {
+    font-weight: var(--fw-regular);
+}
+
+.fw-bold {
+    font-weight: var(--fw-bold);
+}
+
+.fs-body {
+    font-size: var(--fs-body);
+}
+
+.fs-button {
+    font-size: var(--fs-button);
+}
+
+.fs-nav {
+    font-size: var(--fs-nav);
+}
+
+.fs-primary-heading {
+    font-size: var(--fs-primary-heading);
+}
+
+.fs-secondary-heading {
+    font-size: var(--fs-secondary-heading);
+}
+
+.fs-200 {
+    font-size: var(--fs-200);
+}
+
+.fs-300 {
+    font-size: var(--fs-300);
+}
+
+.fs-400 {
+    font-size: var(--fs-400);
+}
+
+.fs-500 {
+    font-size: var(--fs-500);
+}
+
+.fs-600 {
+    font-size: var(--fs-600);
+}
+
+.fs-700 {
+    font-size: var(--fs-700);
+}
+
+.fs-800 {
+    font-size: var(--fs-800);
+}
+
+.fs-900 {
+    font-size: var(--fs-900);
+}
+
+.padding-top-100 {
+    padding-block-start: var(--size-100);
+}
+
+.padding-block-700 {
+    padding-block: var(--size-700);
+}
+
+.padding-top-900 {
+    padding-block-start: var(--size-900);
+}
+
+.padding-block-1000 {
+    padding-block: var(--size-1000);
+}
+
+.padding-top-1000 {
+    padding-block-start: var(--size-1000);
+}
+
+.padding-bottom-400 {
+    padding-block-end: var(--size-400);
+}
+
+.margin-top-700 {
+    margin-block-start: var(--size-700);
+}
+
+.margin-top-800 {
+    margin-block-start: var(--size-800);
+}
+
+.margin-top-900 {
+    margin-block-start: var(--size-900);
+}
+
+.margin-top-1000 {
+    margin-block-start: var(--size-1000);
+}
